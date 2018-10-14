@@ -64,9 +64,9 @@ class GameManager(object):
 
         try:
             us = UserSetting.get(id=user.id)
-        if not us:
-            us = UserSetting(id=user.id)
-            us.stats = True
+            if not us:
+                us = UserSetting(id=user.id)
+                us.stats = True
 
             us.games_played += 1
             game = self.chatid_games[chat.id][-1]
