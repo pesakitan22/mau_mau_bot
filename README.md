@@ -2,7 +2,7 @@
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](./LICENSE)
 
-Telegram Bot that allows you to play the popular card game UNO via inline queries. The bot currently runs as [@unobot](http://telegram.me/unobot).
+Telegram Bot that allows you to play the popular card game UNO via inline queries, this repo is made for one special mode `One Hit Kill`, which the game will automatically ends in first win of one of its player. The bot currently runs as [@unobot](http://telegram.me/unobot) and the modified one is [@xultanbot](http://telegram.me/xultanbot).
 
 To run the bot yourself, you will need: 
 - Python (tested with 3.4+)
