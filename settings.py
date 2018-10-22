@@ -41,7 +41,8 @@ def show_settings(bot, update):
     us = UserSetting.get(id=update.message.from_user.id)
 
     if not us:
-        us = UserSetting(id=update.message.from_user.id, full_name=update.message.from_user.full_name)
+        us = UserSetting(id=update.message.from_user.id)
+        us.full_name=update.message.from_user.full_name
 
     if not us.stats:
         stats = '📊' + ' ' + _("Enable statistics")
