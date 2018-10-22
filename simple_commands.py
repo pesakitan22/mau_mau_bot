@@ -144,7 +144,7 @@ def stats(bot, update):
         #       n).format(number=n)
         # )
 
-        print(bp)
+        print(bp.full_name)
         
         n = (us.first_places / us.games_played) * 100
         stats_text.append(
