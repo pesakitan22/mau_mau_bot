@@ -135,7 +135,7 @@ def stats(bot, update):
               n).format(number=n)
         )
         
-        n = us.first_places / us.games_played
+        n = (us.first_places / us.games_played) * 100
         stats_text.append(
             _("{number}% win percentage",
               "{number}% win percentage",
