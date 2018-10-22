@@ -64,11 +64,11 @@ class GameManager(object):
 
         try:
             us = UserSetting.get(id=user.id)
-            us.full_name = user.full_name
-            print(user.name)
+            us.fullname = user.username
+
             if not us:
                 us = UserSetting(id=user.id)
-                us.full_name = user.full_name
+                us.fullname = user.username
                 us.stats = True
 
             game = self.chatid_games[chat.id][-1]

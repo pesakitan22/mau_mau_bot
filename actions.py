@@ -91,12 +91,11 @@ def do_play_card(bot, player, result_id):
     user = player.user
 
     us = UserSetting.get(id=user.id)
-    us.full_name = user.full_name
-    print(user.name)
+    us.fullname = user.username
+
     if not us:
         us = UserSetting(id=user.id)
-        us.full_name = user.full_name
-        print(user.name)
+        us.fullname = user.username
 
     if us.stats:
         us.cards_played += 1
