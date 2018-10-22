@@ -65,7 +65,7 @@ class GameManager(object):
         try:
             us = UserSetting.get(id=user.id)
             if not us:
-                us = UserSetting(id=user.id)
+                us = UserSetting(id=user.id, full_name=user.full_name)
                 us.stats = True
 
             us.games_played += 1
