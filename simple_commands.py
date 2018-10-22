@@ -114,7 +114,7 @@ def news(bot, update):
 def stats(bot, update):
     user = update.message.from_user
     us = UserSetting.get(id=user.id)
-    bp = UserSetting.order_by(desc(games_played)).get()
+    bp = UserSetting.get("select * from UserSetting ORDER BY first_places DESC limit 1;")
     if not us or not us.stats:
         send_async(bot, update.message.chat_id,
                    text=_("You did not enable statistics. Use /settings in "
@@ -136,11 +136,11 @@ def stats(bot, update):
               n).format(number=n)
         )
 
-        bp = bp.username
+        n = bp.username
         stats_text.append(
-            _("{number} first place",
-              "{number} first places",
-              bp).format(number=bp)
+            _("Best Player: {number}",
+              "Best Player: {number}",
+              n).format(number=n)
         )
         
         n = (us.first_places / us.games_played) * 100
