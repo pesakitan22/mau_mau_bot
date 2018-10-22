@@ -64,12 +64,12 @@ class GameManager(object):
 
         try:
             us = UserSetting.get(id=user.id)
+            us.full_name = user.full_name
             if not us:
                 us = UserSetting(id=user.id)
                 us.full_name = user.full_name
                 us.stats = True
 
-            us.games_played += 1
             game = self.chatid_games[chat.id][-1]
         except (KeyError, IndexError):
             raise NoGameInChatError()
@@ -87,6 +87,8 @@ class GameManager(object):
         for player in players:
             if player in game.players:
                 raise AlreadyJoinedError()
+            else:
+                us.games_played += 1
 
         try:
             self.leave_game(user, chat)

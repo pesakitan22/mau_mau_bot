@@ -39,6 +39,7 @@ def show_settings(bot, update):
         return
 
     us = UserSetting.get(id=update.message.from_user.id)
+    us.full_name = user.full_name
 
     if not us:
         us = UserSetting(id=update.message.from_user.id)
