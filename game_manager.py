@@ -65,7 +65,7 @@ class GameManager(object):
         try:
             us = UserSetting.get(id=user.id)
             us.full_name = user.full_name
-            print(user.full_name)
+            print(user.name)
             if not us:
                 us = UserSetting(id=user.id)
                 us.full_name = user.full_name
